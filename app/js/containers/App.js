@@ -12,8 +12,8 @@ const App = () => {
         return <div className='enterScreen'><EnterScreen changeScreen={handleScreen}/></div>
     } else {
         return (
-            <div>
-                <img src='../../../assets/img/1380.jpg'></img>
+            <div >
+                <img className='gameScreen'src='../../../assets/img/town/town3.jpg' scrolling='no'></img>
             </div>
         );
     };

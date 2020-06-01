@@ -2,32 +2,41 @@ import React, {useState,useEffect} from 'react';
 
 const EnterScreen = ({changeScreen}) =>{
 
-    const [startOpacity,setStartOpacity]=useState(20);
+    const [startOpacity,setStartOpacity]=useState(25);
+    const [increase,setIncrease]=useState(true);
 
-    useEffect( () => {
-        console.log('start',startOpacity);
+    useEffect(() => {
+        if(increase === false){
+          return 
+        };
+        if(increase===true){
+          const timeout = setTimeout(() => {
+            setStartOpacity(startOpacity + 1);
+            if (startOpacity === 75){
+              setIncrease(false);
+            };
+          }, 20);
 
-        const OpInterval = setInterval( () => {
-            if(startOpacity<=20){
-                setStartOpacity(prevOpacity => {
-                    console.log('start2',startOpacity)
-                    if(startOpacity>=80){
-                        console.log('wyczyszcozne')
-                        return clearInterval(OpInterval)
-                    };
-                    return prevOpacity+1})
-            } else if (startOpacity>=80) {
-                setStartOpacity(prevOpacity => {
-                    if(startOpacity<=20){
-                        console.log('wyczyszcozne')
-                        return clearInterval(OpInterval)
-                    };
-                    return prevOpacity-1})
-            };  
-        },20);
-    },[]);
+          return () => clearInterval(timeout);
+        };
+    },[startOpacity]);
 
-    console.log('out',startOpacity)
+    useEffect(() => {
+      if(increase === true){
+        return 
+      };
+      if(increase === false){
+        const timeout = setTimeout(() => {
+          setStartOpacity(startOpacity - 1);
+          if ( startOpacity === 25){
+            setIncrease(true);
+          };
+        }, 20);
+
+        return () => clearInterval(timeout);
+      };
+    },[startOpacity]);
+
     return (
         <div className='enterScreen'>
             <div><h1 onClick={changeScreen} style={{opacity:startOpacity+'%'}}>Start a game</h1></div>

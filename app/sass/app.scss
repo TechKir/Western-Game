@@ -1,20 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     font-family: 'Tenali Ramakrishna', sans-serif;
-    font-size: 3rem;
-    background-image: url(../../images/enterScreen/enterScreen2.jpg);
+    font-size: 5vh;
+    background-image: url(../../images/enterScreen/enterScreen3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin-top: 150px;
+    height: 100vh;
+    overflow-y: hidden;
 }
 
 .enterScreen{
     display: flex;
     div{
         margin: auto;
-        margin-top: 130px;
-        // h1{
-        //     opacity: 50%;
-        // }
+        margin-top: 4.5em;;
     }
+}
+.gameScreen{
+    height: 100%;
 }
