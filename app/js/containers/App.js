@@ -1,21 +1,18 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import EnterScreen from '../EnterScreen';
+import GameScreen from '../GameScreen';
 
 const App = () => {
-    const [gameScreen,setGameScreen]=useState(false);
+    const [gameScreen,setGameScreen]=useState(true);
 
     const handleScreen = () => {
         setGameScreen(gameScreen ? false : true)
     };
-
+    
     if (gameScreen===false){
         return <div className='enterScreen'><EnterScreen changeScreen={handleScreen}/></div>
     } else {
-        return (
-            <div >
-                <img className='gameScreen'src='../../../assets/img/town/town3.jpg' scrolling='no'></img>
-            </div>
-        );
+        return <div className='gameScreen'><GameScreen/></div>
     };
 };
 

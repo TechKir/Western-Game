@@ -17,7 +17,7 @@ const EnterScreen = ({changeScreen}) =>{
             };
           }, 20);
 
-          return () => clearInterval(timeout);
+          return () => clearTimeout(timeout);
         };
     },[startOpacity]);
 
@@ -33,7 +33,7 @@ const EnterScreen = ({changeScreen}) =>{
           };
         }, 20);
 
-        return () => clearInterval(timeout);
+        return () => clearTimeout(timeout);
       };
     },[startOpacity]);
 

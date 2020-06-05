@@ -4,7 +4,10 @@
   "description": "",
   "main": "webpack.config.js",
   "author": "Wojciech Kiryk",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "webpack-dev-server": ">=3.1.11"
+  },
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack"

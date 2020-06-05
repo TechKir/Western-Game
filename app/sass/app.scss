@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+.enterScreen{
+    display: flex;
     font-family: 'Tenali Ramakrishna', sans-serif;
     font-size: 5vh;
     background-image: url(../../images/enterScreen/enterScreen3.jpg);
@@ -12,15 +14,21 @@ body{
     background-position: center;
     height: 100vh;
     overflow-y: hidden;
-}
-
-.enterScreen{
-    display: flex;
     div{
         margin: auto;
         margin-top: 4.5em;;
+        background-image: none;
     }
 }
+
+.flexbox{
+    //display: flex;
+    //overflow-x: hidden;
+}
 .gameScreen{
-    height: 100%;
+    position: relative
+    //align-items: center;
+    //overflow-y: hidden;
+    
+
 }
