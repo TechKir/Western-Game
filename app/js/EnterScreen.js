@@ -6,10 +6,10 @@ const EnterScreen = ({changeScreen}) =>{
     const [increase,setIncrease]=useState(true);
 
     useEffect(() => {
-        if(increase === false){
+        if(!increase){
           return 
         };
-        if(increase===true){
+   
           const timeout = setTimeout(() => {
             setStartOpacity(startOpacity + 1);
             if (startOpacity === 75){
@@ -17,8 +17,8 @@ const EnterScreen = ({changeScreen}) =>{
             };
           }, 20);
 
-          return () => clearTimeout(timeout);
-        };
+        return () => clearTimeout(timeout);
+    
     },[startOpacity]);
 
     useEffect(() => {

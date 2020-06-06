@@ -21,14 +21,53 @@
     }
 }
 
-.flexbox{
-    //display: flex;
-    //overflow-x: hidden;
+.gameContainer{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
 }
-.gameScreen{
-    position: relative
-    //align-items: center;
-    //overflow-y: hidden;
-    
 
+.gameImg{
+    position: relative;
+    height: 100vh;
+    width: auto
 }
+
+.bandit{
+    position: relative;
+    z-index: 1;
+    left: 500px;
+    top:830px;
+}
+
+.intervalDiv{
+    width:10vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    top:0;
+    &:hover {
+        border: 2px solid rgba(255,255,255,0.5);
+        background: rgba(255,255,255,0.1)
+    }
+    &:nth-of-type(1) {
+        right: 0;
+    }
+    &:nth-of-type(2) {
+        right: 10vw ;
+    }
+    &:nth-of-type(3) {
+        right: calc(2 * 10vw) ;
+    }
+    &:nth-of-type(4) {
+        left: 0;
+    }
+    &:nth-of-type(5) {
+        left: 10vw ;
+    }
+    &:nth-of-type(6) {
+        left: calc(2 * 10vw) ;
+    }
+}
+
