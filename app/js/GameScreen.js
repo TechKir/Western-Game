@@ -66,11 +66,6 @@ class GameScreen extends Component {
     };
     //--end--//
 
-    handlekillbandit = (e) => {
-        console.log(e.screenX, e.screenY)
-        console.log(this.state.dimensions.width)
-    };
-
     //destrukturyzacja event.target na img. 
     onImgLoad = ({target:img}) => {       
         this.setState({dimensions:{height:img.offsetHeight,
@@ -78,17 +73,26 @@ class GameScreen extends Component {
     };
 
     render() {
-        const { move, dimensions } = this.state;
+        const { move } = this.state;
+
+        //Array with all bandits positions:
+        const bandits = [{left:350,top:530, visible:true},{left:580,top:530, visible:true},{left:995,top:565, visible:true},{left:1282,top:530, visible:true},{left:1447,top:545, visible:true},{left:1578,top:530, visible:true},{left:1705,top:545, visible:true},{left:1990,top:535, visible:true},{left:2115,top:535, visible:true},{left:2575,top:535, visible:true},{left:2696,top:535, visible:true},{left:3105,top:535, visible:true},{left:3337,top:535, visible:true},{left:3548,top:535, visible:true},{left:3801,top:535, visible:true},{left:4063,top:535, visible:true},{left:4245,top:535, visible:true},{left:4430,top:535, visible:true},{left:4580,top:520, visible:true},{left:4702,top:520, visible:true},{left:4938,top:520, visible:true},{left:300,top:320, visible:true},{left:464,top:210, visible:true},{left:635,top:315, visible:true},{left:831,top:330, visible:true},{left:940,top:330, visible:true},{left:1050,top:330, visible:true},{left:794,top:210, visible:true},{left:940,top:130, visible:true},{left:1092,top:210, visible:true},{left:1427,top:330, visible:true},{left:1525,top:330, visible:true},{left:1621,top:330, visible:true},{left:1718,top:330, visible:true},{left:1400,top:100, visible:true},{left:1570,top:10, visible:true},{left:1730,top:100, visible:true},{left:1968,top:330, visible:true},{left:2095,top:330, visible:true},{left:2220,top:330, visible:true},{left:2345,top:330, visible:true},{left:2468,top:330, visible:true},{left:2594,top:330, visible:true},{left:2719,top:330, visible:true},{left:2015,top:8, visible:true},{left:2684,top:8, visible:true},{left:3098,top:315, visible:true},{left:3218,top:315, visible:true},{left:3339,top:315, visible:true},{left:3066,top:115, visible:true},{left:3215,top:40, visible:true},{left:3368,top:115, visible:true},{left:3545,top:315, visible:true},{left:3675,top:315, visible:true},{left:3805,top:315, visible:true},{left:3497,top:141, visible:true},{left:3673,top:70, visible:true},{left:3850,top:143, visible:true},{left:4234,top:76, visible:true},{left:4652,top:292, visible:true},{left:4819,top:238, visible:true},{left:4984,top:291, visible:true}];
+        //--end--
+
         return (
-            <div class='gameContainer'  onClick={this.handlekillbandit}>
-                {/* <Bandit/> */}
+            <div class='gameContainer'>             
                 <div className='intervalDiv' onMouseEnter={this.onEnterR3} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterR2} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterR1} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterL3} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterL2} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterL1} onMouseLeave={this.onLeave} />
-                <img onLoad={this.onImgLoad} className='gameImg' style={{right:move+'px'}}src={image} scrolling='no'/>
+                <div className='gameImg' style={{right:move+'px'}}>
+                    <img className='gameImg' onLoad={this.onImgLoad} src={image} scrolling='no'/>
+                    {bandits.map( (element,index) => {
+                        return <Bandit key={index} left={element.left} top={element.top} visible={element.visible}/>
+                    })}
+                </div>
             </div>
         );
     };

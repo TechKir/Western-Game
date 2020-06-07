@@ -3,7 +3,7 @@ import EnterScreen from '../EnterScreen';
 import GameScreen from '../GameScreen';
 
 const App = () => {
-    const [gameScreen,setGameScreen]=useState(false);
+    const [gameScreen,setGameScreen]=useState(true);
 
     const handleScreen = () => {
         setGameScreen(gameScreen ? false : true)

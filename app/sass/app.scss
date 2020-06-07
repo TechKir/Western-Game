@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url(../../assets/img/cursor/gun-pointer.png),auto;
 }
 
 .enterScreen{
@@ -35,10 +36,18 @@
 }
 
 .bandit{
-    position: relative;
+    width: 130px;
+    height: 110px;
+    position: absolute;
     z-index: 1;
-    left: 500px;
-    top:830px;
+}
+
+.visible{
+    opacity: 100%;
+}
+
+.unvisible{
+    opacity: 0%;
 }
 
 .intervalDiv{
