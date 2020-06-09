@@ -32,12 +32,12 @@
 .gameImg{
     position: relative;
     height: 100vh;
-    width: auto
+    width: 300vw;
 }
 
 .bandit{
-    width: 130px;
-    height: 110px;
+    width: auto;
+    height: 11.7vh;
     position: absolute;
     z-index: 1;
 }
@@ -47,7 +47,7 @@
 }
 
 .unvisible{
-    opacity: 0%;
+    opacity: 100%;
 }
 
 .intervalDiv{
@@ -79,4 +79,3 @@
         left: calc(2 * 10vw) ;
     }
 }
-
