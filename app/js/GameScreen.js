@@ -86,7 +86,7 @@ class GameScreen extends Component {
                 <div className='gameImg' style={{right:move+'px'}}>
                     <img className='gameImg' onLoad={this.onImgLoad} src={image} scrolling='no'/>
                     {this.props.bandits.map( (element,index) => {
-                        return <Bandit handleClick={() => this.props.handleClick(element.visible)} key={index} left={element.left} top={element.top} visible={element.visible}/>
+                        return <Bandit handleClick={() => this.props.handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
                     })}                    
                 </div>
             </div>

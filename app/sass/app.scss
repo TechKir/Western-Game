@@ -3,6 +3,22 @@
     padding: 0;
     box-sizing: border-box;
     cursor: url(../../assets/img/cursor/gun-pointer.png),auto;
+    overflow: hidden;
+}
+
+.attribution-block{
+    z-index: 3;
+    position: relative;
+    top:-20px;
+    display: block;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    font-size: 10px;
+    padding: 0px 6px;
+    a{
+        text-decoration: none;
+        color:brown;
+        cursor: pointer;
+    }
 }
 
 .enterScreen{
@@ -14,7 +30,6 @@
     background-size: cover;
     background-position: center;
     height: 100vh;
-    overflow-y: hidden;
     div{
         margin: auto;
         margin-top: 4.5em;;
@@ -25,7 +40,6 @@
 .gameContainer{
     position: relative;
     height: 100vh;
-    overflow: hidden;
     width: 100vw;
 }
 
@@ -47,7 +61,7 @@
 }
 
 .unvisible{
-    opacity: 100%;
+    opacity: 0%;
 }
 
 .intervalDiv{
