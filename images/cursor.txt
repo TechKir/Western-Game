@@ -1,5 +1,0 @@
-<style type="text/css">
-body {cursor: url(http://www.rw-designer.com/cursor-extern.php?id=101646);}
-</style>
-<a href="http://www.rw-designer.com/cursor-set/gun-game"
-title="Get free cursors for your web.">Gun Game Cursors</a>

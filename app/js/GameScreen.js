@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Bandit from './Bandit';
-import image from '../../assets/img/town/town3.jpg';
+import image from '../../assets/img/town/town.jpg';
 
 class GameScreen extends Component {
 
@@ -12,7 +12,7 @@ class GameScreen extends Component {
         }
     };
 
-    //functions below allow to move a screen(img) in different speed:
+    //Functions below allow to move a screen(img) in different speed:
     onEnterR1 = e => {
         this.interval = setInterval(() => {
             this.setState(prevState => ({ 
@@ -66,17 +66,34 @@ class GameScreen extends Component {
     };
     //--end--//
 
-    //destrukturyzacja event.target na img. 
+    //Destructuring 'event.target' for img. 
     onImgLoad = ({target:img}) => {       
         this.setState({dimensions:{height:img.offsetHeight,
                                    width:img.offsetWidth}});
     };
 
+    
     render() {
+        
+        const singleShot = () => {
+            const shotSoundsArray=['../../assets/sounds/Winchester/winchester1.mp3','../../assets/sounds/Winchester/winchester2.mp3','../../assets/sounds/Winchester/winchester3.mp3','../../assets/sounds/Winchester/winchester4.mp3','../../assets/sounds/Winchester/winchester5.mp3','../../assets/sounds/Winchester/winchester6.mp3','../../assets/sounds/Winchester/winchester7.mp3','../../assets/sounds/Winchester/winchester8.mp3','../../assets/sounds/Winchester/winchester9.mp3','../../assets/sounds/Winchester/winchester10.mp3','../../assets/sounds/Winchester/winchester11.mp3','../../assets/sounds/Winchester/winchester12.mp3','../../assets/sounds/Winchester/winchester13.mp3','../../assets/sounds/Winchester/winchester14.mp3','../../assets/sounds/Winchester/winchester15.mp3','../../assets/sounds/Winchester/winchester16.mp3','../../assets/sounds/Winchester/winchester17.mp3','../../assets/sounds/Winchester/winchester18.mp3'];
+
+            function getRandomSound(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            };
+            let randomShot=getRandomSound(0,17);
+
+            let shotSound = new Audio(shotSoundsArray[randomShot]);
+            shotSound.play();
+        };
+
         const { move } = this.state;
-        //const { bandits } = this.props;
+        const { bandits,handleClick } = this.props;
+
         return (
-            <div class='gameContainer grid col-60'>             
+            <div onClick={singleShot} class='gameContainer'>                            
                 <div className='intervalDiv' onMouseEnter={this.onEnterR3} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterR2} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterR1} onMouseLeave={this.onLeave} />
@@ -85,8 +102,8 @@ class GameScreen extends Component {
                 <div className='intervalDiv' onMouseEnter={this.onEnterL1} onMouseLeave={this.onLeave} />
                 <div className='gameImg' style={{right:move+'px'}}>
                     <img className='gameImg' onLoad={this.onImgLoad} src={image} scrolling='no'/>
-                    {this.props.bandits.map( (element,index) => {
-                        return <Bandit handleClick={() => this.props.handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
+                    {bandits.map( (element,index) => {
+                        return <Bandit handleClick={() => handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
                     })}                    
                 </div>
             </div>

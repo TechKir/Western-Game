@@ -38,13 +38,9 @@ const EnterScreen = ({changeScreen}) =>{
     },[startOpacity]);
 
     return (
-      <React.Fragment>
         <div className='enterScreen'>
             <div><h1 onClick={changeScreen} style={{opacity:startOpacity+'%'}}>Start a game</h1></div>
         </div>
-        {/* <div style={{display:'block'}}></div> */}
-
-      </React.Fragment>  
     );
 };
 
