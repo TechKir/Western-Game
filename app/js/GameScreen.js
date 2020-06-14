@@ -72,7 +72,10 @@ class GameScreen extends Component {
                                    width:img.offsetWidth}});
     };
 
-    
+    componentWillUnmount(){
+        clearInterval(this.interval);
+    };
+
     render() {
         
         const singleShot = () => {
@@ -102,7 +105,7 @@ class GameScreen extends Component {
                 <div className='intervalDiv' onMouseEnter={this.onEnterL1} onMouseLeave={this.onLeave} />
                 <div className='gameImg' style={{right:move+'px'}}>
                     <img className='gameImg' onLoad={this.onImgLoad} src={image} scrolling='no'/>
-                    {bandits.map( (element,index) => {
+                    {bandits.map( (element,index) => {                 
                         return <Bandit handleClick={() => handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
                     })}                    
                 </div>

@@ -22,6 +22,7 @@
 }
 
 .enterScreen{
+    cursor: url('../../assets/img/cursor/revolver.png'),auto;
     display: flex;
     font-family: 'Tenali Ramakrishna', sans-serif;
     font-size: 5vh;
@@ -34,6 +35,9 @@
         margin: auto;
         margin-top: 4.5em;;
         background-image: none;
+        h1{
+            cursor: url('../../assets/img/cursor/revolver.png'),auto;
+        }
     }
 }
 
@@ -98,4 +102,23 @@
     width: 0px;
     height: 0px;
     position: relative;
+}
+
+.gameover{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/img/gameover/gameover4.jpg');
+    background-size: cover;;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    color: rgba(148, 30, 30, 0.9);
+    font-size: 7vh;
+    cursor: url('../../assets/img/cursor/revolver.png'),auto;
+    h1{
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        cursor: url('../../assets/img/cursor/revolver.png'),auto;
+        
+    }
 }
