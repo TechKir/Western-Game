@@ -93,7 +93,28 @@ class GameScreen extends Component {
         };
 
         const { move } = this.state;
-        const { bandits,handleClick } = this.props;
+        const { bandits,handleClick,life,kills } = this.props;
+
+        const actualLife = () => {
+            if (life===3){
+                return (
+                    <React.Fragment>
+                        <img className='heart' src='../../assets/img/heart.png'></img>
+                        <img className='heart' src='../../assets/img/heart.png'></img>
+                        <img className='heart' src='../../assets/img/heart.png'></img>
+                    </React.Fragment>
+                )
+            } else if (life===2){
+                return (
+                    <React.Fragment>
+                        <img className='heart' src='../../assets/img/heart.png'></img>
+                        <img className='heart' src='../../assets/img/heart.png'></img>
+                    </React.Fragment>
+                )
+            } else if (life===1){
+                return <img className='heart' src='../../assets/img/heart.png'></img>
+            }
+        }
 
         return (
             <div onClick={singleShot} class='gameContainer'>                            
@@ -103,6 +124,8 @@ class GameScreen extends Component {
                 <div className='intervalDiv' onMouseEnter={this.onEnterL3} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterL2} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterL1} onMouseLeave={this.onLeave} />
+                <div className='heartBox'>{actualLife()}</div>
+        <div className='killsBox'><img className='skull' src='../../assets/img/skull2.png'/><div>= {kills}</div></div>
                 <div className='gameImg' style={{right:move+'px'}}>
                     <img className='gameImg' onLoad={this.onImgLoad} src={image} scrolling='no'/>
                     {bandits.map( (element,index) => {                 

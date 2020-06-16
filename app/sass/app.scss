@@ -108,7 +108,7 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-image: url('../../assets/img/gameover/gameover4.jpg');
+    background-image: url('../../assets/img/gameover/gameover5.jpg');
     background-size: cover;;
     font-family: 'Tenali Ramakrishna', sans-serif;
     color: rgba(148, 30, 30, 0.9);
@@ -121,4 +121,36 @@
         cursor: url('../../assets/img/cursor/revolver.png'),auto;
         
     }
+}
+
+.heartBox{
+    z-index: 1;
+    position: absolute;
+    width: 20vw;
+    height: 9vh;
+
+}
+
+.heart{
+    width: 5vw;
+    height: 9vh;
+    padding:3px
+}
+.killsBox{
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+    top:10vh;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    font-size: 3.5vw;
+    div{
+        line-height: 8vh;
+        height: 5vh;
+    }
+}
+.skull{
+    width: 5vw;
+    height: 9vh;
+    padding:3px
 }

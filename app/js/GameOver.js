@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import App from './containers/App';
 
-const GameOver = () =>{
+const GameOver = props =>{
     const [startOpacity,setStartOpacity]=useState(60);
     const [increase,setIncrease]=useState(true);
     const [gameScreen,setGameScreen]=useState(false);
@@ -43,11 +43,10 @@ const GameOver = () =>{
     };
 
     if(gameScreen==false){
-        return <div className='gameover'><h1 onClick={handleScreen} style={{opacity:startOpacity+'%'}}>GAME OVER</h1></div>
+        return <div className='gameover'><h1 onClick={handleScreen}  style={{opacity:startOpacity+'%'}}>GAME OVER</h1></div>
     } else {
         return <App/>
     }
-
 };
 
 export default GameOver;
