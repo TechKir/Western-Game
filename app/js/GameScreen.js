@@ -23,21 +23,21 @@ class GameScreen extends Component {
     onEnterR2 = e => {
         this.interval = setInterval(() => {
             this.setState(prevState => ({ 
-                move: prevState.dimensions.width<= prevState.move+(prevState.dimensions.width*0.35) ? prevState.move : prevState.move +15}))
+                move: prevState.dimensions.width<= prevState.move+(prevState.dimensions.width*0.35) ? prevState.move : prevState.move +7}))
         }, 1)
     };
 
     onEnterR3 = e => {
         this.interval = setInterval(() => {
             this.setState(prevState => ({ 
-                move: prevState.dimensions.width<= prevState.move+(prevState.dimensions.width*0.35) ? prevState.move : prevState.move +25}))
+                move: prevState.dimensions.width<= prevState.move+(prevState.dimensions.width*0.35) ? prevState.move : prevState.move +14}))
         }, 1)
     };
 
     onEnterL1 = e => {
         this.interval = setInterval(() => {
             this.setState(prevState =>  ({
-                 move: prevState.move<=15 ? prevState.move : prevState.move -1
+                 move: prevState.move<=7 ? prevState.move : prevState.move -1
                 })
             )
         }, 1)
@@ -46,7 +46,7 @@ class GameScreen extends Component {
     onEnterL2 = e => {
         this.interval = setInterval(() => {
             this.setState(prevState =>  ({
-                 move: prevState.move<=15 ? prevState.move : prevState.move -15
+                 move: prevState.move<=7 ? prevState.move : prevState.move -7
                 })
             )
         }, 1)
@@ -55,7 +55,7 @@ class GameScreen extends Component {
     onEnterL3 = e => {
         this.interval = setInterval(() => {
             this.setState(prevState =>  ({
-                 move: prevState.move<=25 ? prevState.move : prevState.move -25
+                 move: prevState.move<=14 ? prevState.move : prevState.move -14
                 })
             )
         }, 1)
@@ -79,7 +79,7 @@ class GameScreen extends Component {
     render() {
         
         const singleShot = () => {
-            const shotSoundsArray=['../../assets/sounds/Winchester/winchester1.mp3','../../assets/sounds/Winchester/winchester2.mp3','../../assets/sounds/Winchester/winchester3.mp3','../../assets/sounds/Winchester/winchester4.mp3','../../assets/sounds/Winchester/winchester5.mp3','../../assets/sounds/Winchester/winchester6.mp3','../../assets/sounds/Winchester/winchester7.mp3','../../assets/sounds/Winchester/winchester8.mp3','../../assets/sounds/Winchester/winchester9.mp3','../../assets/sounds/Winchester/winchester10.mp3','../../assets/sounds/Winchester/winchester11.mp3','../../assets/sounds/Winchester/winchester12.mp3','../../assets/sounds/Winchester/winchester13.mp3','../../assets/sounds/Winchester/winchester14.mp3','../../assets/sounds/Winchester/winchester15.mp3','../../assets/sounds/Winchester/winchester16.mp3','../../assets/sounds/Winchester/winchester17.mp3','../../assets/sounds/Winchester/winchester18.mp3'];
+            const shotSoundsArray=['../../assets/sounds/winchester/winchester1.mp3','../../assets/sounds/winchester/winchester2.mp3','../../assets/sounds/winchester/winchester3.mp3','../../assets/sounds/winchester/winchester4.mp3','../../assets/sounds/winchester/winchester5.mp3','../../assets/sounds/winchester/winchester6.mp3','../../assets/sounds/winchester/winchester7.mp3','../../assets/sounds/winchester/winchester8.mp3','../../assets/sounds/winchester/winchester9.mp3','../../assets/sounds/winchester/winchester10.mp3','../../assets/sounds/winchester/winchester11.mp3','../../assets/sounds/winchester/winchester12.mp3','../../assets/sounds/winchester/winchester13.mp3','../../assets/sounds/winchester/winchester14.mp3','../../assets/sounds/winchester/winchester15.mp3','../../assets/sounds/winchester/winchester16.mp3','../../assets/sounds/winchester/winchester17.mp3','../../assets/sounds/winchester/winchester18.mp3'];
 
             function getRandomSound(min, max) {
                 min = Math.ceil(min);
@@ -99,20 +99,20 @@ class GameScreen extends Component {
             if (life===3){
                 return (
                     <React.Fragment>
-                        <img className='heart' src='../../assets/img/heart.png'></img>
-                        <img className='heart' src='../../assets/img/heart.png'></img>
-                        <img className='heart' src='../../assets/img/heart.png'></img>
+                        <img className='heart' src='../../assets/img/icons/heart.png'></img>
+                        <img className='heart' src='../../assets/img/icons/heart.png'></img>
+                        <img className='heart' src='../../assets/img/icons/heart.png'></img>
                     </React.Fragment>
                 )
             } else if (life===2){
                 return (
                     <React.Fragment>
-                        <img className='heart' src='../../assets/img/heart.png'></img>
-                        <img className='heart' src='../../assets/img/heart.png'></img>
+                        <img className='heart' src='../../assets/img/icons/heart.png'></img>
+                        <img className='heart' src='../../assets/img/icons/heart.png'></img>
                     </React.Fragment>
                 )
             } else if (life===1){
-                return <img className='heart' src='../../assets/img/heart.png'></img>
+                return <img className='heart' src='../../assets/img/icons/heart.png'></img>
             }
         }
 
@@ -125,12 +125,14 @@ class GameScreen extends Component {
                 <div className='intervalDiv' onMouseEnter={this.onEnterL2} onMouseLeave={this.onLeave} />
                 <div className='intervalDiv' onMouseEnter={this.onEnterL1} onMouseLeave={this.onLeave} />
                 <div className='heartBox'>{actualLife()}</div>
-        <div className='killsBox'><img className='skull' src='../../assets/img/skull2.png'/><div>= {kills}</div></div>
+                <div className='killsBox'><img className='skull' src='../../assets/img/icons/skull.png'/><div>= {kills}</div></div>
                 <div className='gameImg' style={{right:move+'px'}}>
                     <img className='gameImg' onLoad={this.onImgLoad} src={image} scrolling='no'/>
-                    {bandits.map( (element,index) => {                 
-                        return <Bandit handleClick={() => handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
-                    })}                    
+                    {bandits.map( (element,index) => {  
+                        if(element.visible=='true'){
+                            return <Bandit handleClick={() => handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
+                        }     
+                    })}                
                 </div>
             </div>
         );
@@ -138,3 +140,8 @@ class GameScreen extends Component {
 };
 
 export default GameScreen;
+
+//dzialajacy map:
+// {bandits.map( (element,index) => {                 
+//     return <Bandit handleClick={() => handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
+// })}  

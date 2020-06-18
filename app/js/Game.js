@@ -67,7 +67,7 @@ class Game extends Component {
         } else {
             clearInterval(this.mainInterval);
             clearTimeout(this.deathInterval);
-            return <GameOver/>
+            return <GameOver />
         }
     }
 }

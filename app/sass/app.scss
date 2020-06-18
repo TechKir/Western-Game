@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url(../../assets/img/cursor/target.png),auto;
+    cursor: url(../../assets/img/cursors/revolver.png),auto;
     overflow: hidden;
+    max-height: 100vh;
 }
 
 .attribution-block{
@@ -22,7 +23,7 @@
 }
 
 .enterScreen{
-    cursor: url('../../assets/img/cursor/revolver.png'),auto;
+    //cursor: url(../../assets/img/cursors/revolver.png),auto;
     display: flex;
     font-family: 'Tenali Ramakrishna', sans-serif;
     font-size: 5vh;
@@ -35,9 +36,9 @@
         margin: auto;
         margin-top: 4.5em;;
         background-image: none;
-        h1{
-            cursor: url('../../assets/img/cursor/revolver.png'),auto;
-        }
+        // h1{
+        //     //cursor: url('../../assets/img/cursors/revolver.png'),auto;
+        // }
     }
 }
 
@@ -45,12 +46,14 @@
     position: relative;
     height: 100vh;
     width: 100vw;
+    
 }
 
 .gameImg{
     position: relative;
     height: 100vh;
     width: 300vw;
+    cursor: url(../../assets/img/cursors/target.png),auto;
 }
 
 .bandit{
@@ -58,6 +61,7 @@
     height: 11.7vh;
     position: absolute;
     z-index: 1;
+    cursor: url(../../assets/img/cursors/target.red.png),auto;
 }
 
 .visible{
@@ -102,23 +106,24 @@
     width: 0px;
     height: 0px;
     position: relative;
+    top:4vh
 }
 
 .gameover{
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-image: url('../../assets/img/gameover/gameover5.jpg');
+    background-image: url('../../assets/img/gameover/gameover4.jpg');
     background-size: cover;;
     font-family: 'Tenali Ramakrishna', sans-serif;
     color: rgba(148, 30, 30, 0.9);
     font-size: 7vh;
-    cursor: url('../../assets/img/cursor/revolver.png'),auto;
+    //cursor: url('../../assets/img/cursors/revolver.png'),auto;
     h1{
         align-items: center;
         justify-content: center;
         margin: auto;
-        cursor: url('../../assets/img/cursor/revolver.png'),auto;
+        //cursor: url('../../assets/img/cursors/revolver.png'),auto;
         
     }
 }
