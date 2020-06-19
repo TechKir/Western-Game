@@ -5,14 +5,32 @@ import Game from '../Game';
 const App = () => {
     const [gameScreen,setGameScreen]=useState(false);
 
+    let musicBackground;
+    musicBackground = new Audio('../../assets/sounds/background/tobias_weber_-_Tracing_My_Steps_1.mp3');
+    musicBackground.volume=0.4;
+
+    const musicOff = () => {
+        console.log('OFF')
+        musicBackground.pause()
+    };
+    
+    const musicOn = () => {
+        console.log('ON')
+        musicBackground.play()
+    };
+
+    useEffect( () => {       
+        musicOn()
+    },[])
+
     const handleScreen = () => {
         setGameScreen(gameScreen ? false : true)
     };
-    
+
     if (gameScreen===false){
-        return <div className='enterScreen'><EnterScreen changeScreen={handleScreen}/></div>
+        return <EnterScreen changeScreen={handleScreen}/>
     } else {
-        return <Game/>
+        return <Game />
     };
 };
 
@@ -24,41 +42,30 @@ export default App;
 
 // class App extends Component{
 //     state={
-//         gameScreen:false,
-//         musicOn:true,        
+//         gameScreen:false,     
 //     }
-
     
+
 //     isPlay = () => {
-//         const musicBackground = new Audio('../../assets/sounds/tobias_weber_-_Tracing_My_Steps_1.mp3');
+        
+//         musicBackground = new Audio('../../assets/sounds/tobias_weber_-_Tracing_My_Steps_1.mp3');
 //         musicBackground.volume=0.5;
-//         if(this.state.musicOn==true){           
-//             console.log('on music')
-//             musicBackground.play()
-//         } else if(this.state.musicOn==false){
-//             console.log('off music')
-//             musicBackground.pause()
-//         }
 //     };
 
 //     musicOff = () => {
-//         this.setState({musicOn:false})
+//         console.log('off music')
+//         musicBackground.pause()
 //     };
 
 //     musicStart = () => {
-//         this.setState({musicOn:true})
+//         console.log('on music')
+//         musicBackground.play()
 //     };
 
 //     componentDidMount(){      
 //         this.isPlay();
 //         this.musicOff();
 //         //this.isPlay();
-//     };
-
-//     componentDidUpdate(){
-//         if (this.state.musicOn==false){
-//             this.isPlay();
-//         }
 //     };
 
 //     componentWillUnmount(){

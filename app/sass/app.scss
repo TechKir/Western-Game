@@ -18,35 +18,40 @@
     a{
         text-decoration: none;
         color:brown;
-        cursor: pointer;
     }
 }
 
 .enterScreen{
-    //cursor: url(../../assets/img/cursors/revolver.png),auto;
     display: flex;
     font-family: 'Tenali Ramakrishna', sans-serif;
     font-size: 5vh;
     background-image: url(../../assets/img/enterScreen/enterScreen.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    div{
-        margin: auto;
-        margin-top: 4.5em;;
-        background-image: none;
-        // h1{
-        //     //cursor: url('../../assets/img/cursors/revolver.png'),auto;
-        // }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        font-size: 12vh;
+        justify-content: center;
+    }
+    p{
+        text-align: center;
+        line-height: 6vh;
+        padding: 0 10vw;
+    }
+    h2{
+        cursor: url(../../assets/img/cursors/aim.red.png),auto;
+        font-size: 7vh;
     }
 }
 
 .gameContainer{
     position: relative;
     height: 100vh;
-    width: 100vw;
-    
+    width: 100vw;   
 }
 
 .gameImg{
@@ -61,15 +66,7 @@
     height: 11.7vh;
     position: absolute;
     z-index: 1;
-    cursor: url(../../assets/img/cursors/target.red.png),auto;
-}
-
-.visible{
-    opacity: 100%;
-}
-
-.unvisible{
-    opacity: 0%;
+    cursor: url(../../assets/img/cursors/aim.red.png),auto;
 }
 
 .intervalDiv{
@@ -78,6 +75,7 @@
     position: absolute;
     z-index: 1;
     top:0;
+    cursor: url(../../assets/img/cursors/target.png),auto;
     &:hover {
         border: 2px solid rgba(255,255,255,0.5);
         background: rgba(255,255,255,0.1)
@@ -107,25 +105,6 @@
     height: 0px;
     position: relative;
     top:4vh
-}
-
-.gameover{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../../assets/img/gameover/gameover4.jpg');
-    background-size: cover;;
-    font-family: 'Tenali Ramakrishna', sans-serif;
-    color: rgba(148, 30, 30, 0.9);
-    font-size: 7vh;
-    //cursor: url('../../assets/img/cursors/revolver.png'),auto;
-    h1{
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-        //cursor: url('../../assets/img/cursors/revolver.png'),auto;
-        
-    }
 }
 
 .heartBox{
@@ -158,4 +137,56 @@
     width: 5vw;
     height: 9vh;
     padding:3px
+}
+
+.win{
+    background-image: url(../../assets/img/win/2.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    font-weight: bold;
+    color: rgba(84, 150, 67, 0.9);
+    align-items: center;
+    justify-content: center;
+    h1{
+        font-size: 12vh;
+        //-webkit-text-stroke: 0.2px black;
+    }
+    p{
+        font-size: 8vh;
+        //webkit-text-stroke: 1px black;
+        span{
+            cursor: url(../../assets/img/cursors/aim.red.png),auto;
+            color: rgba(53, 139, 32, 0.9);
+        }
+    }
+}
+
+.gameover{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/img/gameover/gameover0.jpg');
+    background-size: cover;;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    font-weight: bold;
+    color: rgba(148, 30, 30, 0.9);
+    align-items: center;
+    justify-content: center;
+    h1{
+        font-size: 12vh;
+        //-webkit-text-stroke: 0.2px black;
+    }
+    p{
+        font-size: 8vh;
+        //webkit-text-stroke: 1px black;
+        span{
+            cursor: url(../../assets/img/cursors/aim.red.png),auto;
+            color: rgb(238, 11, 11);
+        }
+    }
 }

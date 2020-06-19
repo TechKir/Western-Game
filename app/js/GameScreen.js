@@ -140,8 +140,3 @@ class GameScreen extends Component {
 };
 
 export default GameScreen;
-
-//dzialajacy map:
-// {bandits.map( (element,index) => {                 
-//     return <Bandit handleClick={() => handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>
-// })}  

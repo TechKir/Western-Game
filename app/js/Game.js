@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GameScreen from '../js/GameScreen';
+import Win from '../js/Win'
 import GameOver from '../js/GameOver';
 
 class Game extends Component {
@@ -16,8 +17,7 @@ class Game extends Component {
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        let randomNumber=getRandomIntInclusive(0,61) // change (0,61) for:this.state.bandits.length-1
-
+        let randomNumber=getRandomIntInclusive(0,this.state.bandits.length-1)
         this.setState(prevState => {
             prevState.bandits[randomNumber].visible='true'
             return [...prevState]
@@ -62,12 +62,16 @@ class Game extends Component {
     };
 
     render() {
-        if (this.state.life>0){
+        if (this.state.life>0 && this.state.kills<50){
             return <GameScreen bandits={this.state.bandits} life={this.state.life} kills={this.state.kills} handleClick={this.handleClick}/>
+        } else if(this.state.kills==50 && this.state.life>0){
+            clearInterval(this.mainInterval);
+            clearTimeout(this.deathInterval);
+            return <Win/>
         } else {
             clearInterval(this.mainInterval);
             clearTimeout(this.deathInterval);
-            return <GameOver />
+            return <GameOver killsScore={this.state.kills}/>
         }
     }
 }

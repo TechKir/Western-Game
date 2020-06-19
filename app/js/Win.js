@@ -1,8 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import App from './containers/App';
 
-const GameOver = props =>{
-    const [startOpacity,setStartOpacity]=useState(60);
+const Win = () => {
+
+    const [startOpacity,setStartOpacity]=useState(70);
     const [increase,setIncrease]=useState(true);
     const [gameScreen,setGameScreen]=useState(false);
 
@@ -13,10 +14,10 @@ const GameOver = props =>{
    
           const timeout = setTimeout(() => {
             setStartOpacity(startOpacity + 1);
-            if (startOpacity === 100){
+            if (startOpacity === 90){
               setIncrease(false);
             };
-          }, 10);
+          }, 20);
 
         return () => clearTimeout(timeout);
     
@@ -29,10 +30,10 @@ const GameOver = props =>{
       if(increase === false){
         const timeout = setTimeout(() => {
           setStartOpacity(startOpacity - 1);
-          if ( startOpacity === 60){
+          if ( startOpacity === 70){
             setIncrease(true);
           };
-        }, 10);
+        }, 20);
 
         return () => clearTimeout(timeout);
       };
@@ -41,19 +42,18 @@ const GameOver = props =>{
     const handleScreen = () => {
         setGameScreen(true)
     };
-//style={{opacity:startOpacity+'%'}}
-    if(gameScreen==false){
+
+    if (gameScreen==false){
         return (
-          <div className='gameover'>
-            <h1>GAME OVER</h1>
-            <p>You faild. The city is still terrorized.</p>
-            <p>Kills:{props.killsScore} </p>
-            <p>Would you like to <span onClick={handleScreen} style={{opacity:startOpacity+'%'}}>play again</span>?</p>
-          </div>
+            <div className='win'>
+                <h1>Congratulations</h1>
+                <p>You release the city!</p>
+                <p>Would you like to <span onClick={handleScreen} style={{opacity:startOpacity+'%'}}>play again</span>?</p>
+            </div>
         )
     } else {
         return <App/>
     }
-};
+}
 
-export default GameOver;
+export default Win
