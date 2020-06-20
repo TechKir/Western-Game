@@ -42,7 +42,6 @@ const GameOver = props =>{
         setGameScreen(true)
     };
 //style={{opacity:startOpacity+'%'}}
-    if(gameScreen==false){
         return (
           <div className='gameover'>
             <h1>GAME OVER</h1>
@@ -50,10 +49,7 @@ const GameOver = props =>{
             <p>Kills:{props.killsScore} </p>
             <p>Would you like to <span onClick={handleScreen} style={{opacity:startOpacity+'%'}}>play again</span>?</p>
           </div>
-        )
-    } else {
-        return <App/>
-    }
+        )    
 };
 
 export default GameOver;

@@ -1,87 +1,39 @@
-import React,{useState,useEffect} from 'react';
-import EnterScreen from '../EnterScreen';
-import Game from '../Game';
+import React, { useState, useEffect } from "react";
+import EnterScreen from "../EnterScreen";
+import Game from "../Game";
+import GameOver from "../GameOver";
 
 const App = () => {
-    const [gameScreen,setGameScreen]=useState(false);
+  const [gameStatus, setGameStatus] = useState(0);
+  const [musicBackground, setMusicBackground] = useState(
+    new Audio(
+      "../../assets/sounds/background/tobias_weber_-_Tracing_My_Steps_1.mp3"
+    )
+  );
 
-    let musicBackground = new Audio('../../assets/sounds/background/tobias_weber_-_Tracing_My_Steps_1.mp3');
-    musicBackground.volume=0.4;
+  useEffect(() => {
+    musicBackground.volume = 0.5;
+    musicBackground.play();
+  }, []);
 
-    const musicOff = () => {
-        console.log('OFF')
-        console.log(musicBackground)
-        musicBackground = null;
-    };
-    
-    const musicOn = () => {
-        console.log('ON')
-        musicBackground.play()
-    };
-    useEffect( () => {       
-        musicOn()
-    },[])
+  useEffect(() => {
+    if (gameStatus === 2) {
+      musicBackground.pause();
+    }
+  }, [gameStatus]);
 
-    const handleScreen = () => {
-        setGameScreen(gameScreen ? false : true)
-    };
+  const handleScreen = () => {
+    setGameScreen(gameScreen ? false : true);
+  };
 
-    if (gameScreen===false){
-        return <EnterScreen changeScreen={handleScreen}/>
-    } else {
-        return <Game musicOff={musicOff}/>
-    };
+  switch (gameStatus) {
+    case 0:
+      return <EnterScreen setGameStatusHandler={setGameStatus} />;
+    case 1:
+      return <Game setGameStatusHandler={setGameStatus} />;
+    case 2:
+      return <GameOver setGameStatusHandler={setGameStatus} />;
+  }
 };
 
 export default App;
-
-// import React,{Component} from 'react';
-// import EnterScreen from '../EnterScreen';
-// import Game from '../Game';
-
-// class App extends Component{
-//     state={
-//         gameScreen:false,     
-//     }
-    
-
-//     isPlay = () => {
-        
-//         musicBackground = new Audio('../../assets/sounds/tobias_weber_-_Tracing_My_Steps_1.mp3');
-//         musicBackground.volume=0.5;
-//     };
-
-//     musicOff = () => {
-//         console.log('off music')
-//         musicBackground.pause()
-//     };
-
-//     musicStart = () => {
-//         console.log('on music')
-//         musicBackground.play()
-//     };
-
-//     componentDidMount(){      
-//         this.isPlay();
-//         this.musicOff();
-//         //this.isPlay();
-//     };
-
-//     componentWillUnmount(){
-//         this.musicOff();
-//     };
-
-//     handleScreen = () => {
-//         this.setState({gameScreen: this.state.gameScreen ? false : true})
-//     };
-
-//     render(){
-//         if (this.state.gameScreen===false){
-//             return <div className='enterScreen'><EnterScreen changeScreen={this.handleScreen} /></div>
-//         } else {
-//             return <Game/>
-//         };
-//     }
-// }  
-
-// export default App;
