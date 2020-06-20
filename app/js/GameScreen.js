@@ -86,7 +86,7 @@ class GameScreen extends Component {
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             };
-            let randomShot=getRandomSound(0,17);
+            let randomShot=getRandomSound(0,shotSoundsArray.length-1);
 
             let shotSound = new Audio(shotSoundsArray[randomShot]);
             shotSound.play();
@@ -114,7 +114,7 @@ class GameScreen extends Component {
             } else if (life===1){
                 return <img className='heart' src='../../assets/img/icons/heart.png'></img>
             }
-        }
+        };
 
         return (
             <div onClick={singleShot} class='gameContainer'>                            

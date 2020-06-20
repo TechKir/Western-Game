@@ -1,26 +1,23 @@
 import React,{useState,useEffect} from 'react';
-import App from './containers/App';
 
-const Win = () => {
-
+const Win = props => {
     const [startOpacity,setStartOpacity]=useState(70);
     const [increase,setIncrease]=useState(true);
-    const [gameScreen,setGameScreen]=useState(false);
 
     useEffect(() => {
-        if(!increase){
-          return 
+      if(!increase){
+        return 
+      };  
+      
+      const timeout = setTimeout(() => {
+        setStartOpacity(startOpacity + 1);
+        if (startOpacity === 97){
+          setIncrease(false);
         };
-   
-          const timeout = setTimeout(() => {
-            setStartOpacity(startOpacity + 1);
-            if (startOpacity === 97){
-              setIncrease(false);
-            };
-          }, 20);
+      }, 20);
 
-        return () => clearTimeout(timeout);
-    
+      return () => clearTimeout(timeout);
+  
     },[startOpacity]);
 
     useEffect(() => {
@@ -39,21 +36,13 @@ const Win = () => {
       };
     },[startOpacity]);
 
-    const handleScreen = () => {
-        setGameScreen(true)
-    };
+    return (
+        <div className='win'>
+            <h1>Congratulations</h1>
+            <p>You release the city!</p>
+            <p>Would you like to <span onClick={() => props.setGameStatusHandler(0)} style={{opacity:startOpacity+'%'}}>play again</span>?</p>
+        </div>
+    )
+};
 
-    if (gameScreen==false){
-        return (
-            <div className='win'>
-                <h1>Congratulations</h1>
-                <p>You release the city!</p>
-                <p>Would you like to <span onClick={handleScreen} style={{opacity:startOpacity+'%'}}>play again</span>?</p>
-            </div>
-        )
-    } else {
-        return <App/>
-    }
-}
-
-export default Win
+export default Win;

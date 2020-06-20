@@ -36,7 +36,7 @@ const EnterScreen = ({setGameStatusHandler}) =>{
         return () => clearTimeout(timeout);
       };
     },[startOpacity]);
-//style={{opacity:startOpacity+'%'}}
+
     return (
         <div className='enterScreen'>
             <h1>Western Shot</h1>
@@ -47,4 +47,4 @@ const EnterScreen = ({setGameStatusHandler}) =>{
 };
 
 export default EnterScreen;
-// You are a last man stand who can release the city from the bad bastards. To achive it you have to kill 10 opponents. Be careful, city is big enough that you can't see all the buildings. You have to look around. Bandits can hide everywhere. Every time they want to shoot you they have to reload their gun and have some time to aim on you. So... when you hear it you can be sure that someone aim on you.
+
