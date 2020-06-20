@@ -36,6 +36,11 @@ const Win = props => {
       };
     },[startOpacity]);
 
+    useEffect(() => {
+      const victorySound=new Audio('../../assets/sounds/victory.wav')
+      victorySound.play();
+    }, []);
+
     return (
         <div className='win'>
             <h1>Congratulations</h1>

@@ -14,20 +14,10 @@ const App = () => {
             musicBackground.volume = 0.5;
             musicBackground.load();
             musicBackground.play();
-        }
-    }, [gameStatus]);
-
-    useEffect(() => {
-        if (gameStatus===2){
+        } else if(gameStatus===2){
             musicBackground.pause();
         }
     }, [gameStatus]);
-
-    useEffect(() =>{
-        if (gameStatus===3){
-            musicBackground.volume = 1;
-        }
-    },[gameStatus])
 
     switch (gameStatus) {
         case 0:
