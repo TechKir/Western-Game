@@ -14,7 +14,7 @@ const Win = () => {
    
           const timeout = setTimeout(() => {
             setStartOpacity(startOpacity + 1);
-            if (startOpacity === 90){
+            if (startOpacity === 97){
               setIncrease(false);
             };
           }, 20);

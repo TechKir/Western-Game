@@ -5,20 +5,19 @@ import Game from '../Game';
 const App = () => {
     const [gameScreen,setGameScreen]=useState(false);
 
-    let musicBackground;
-    musicBackground = new Audio('../../assets/sounds/background/tobias_weber_-_Tracing_My_Steps_1.mp3');
+    let musicBackground = new Audio('../../assets/sounds/background/tobias_weber_-_Tracing_My_Steps_1.mp3');
     musicBackground.volume=0.4;
 
     const musicOff = () => {
         console.log('OFF')
-        musicBackground.pause()
+        console.log(musicBackground)
+        musicBackground = null;
     };
     
     const musicOn = () => {
         console.log('ON')
         musicBackground.play()
     };
-
     useEffect( () => {       
         musicOn()
     },[])
@@ -30,7 +29,7 @@ const App = () => {
     if (gameScreen===false){
         return <EnterScreen changeScreen={handleScreen}/>
     } else {
-        return <Game />
+        return <Game musicOff={musicOff}/>
     };
 };
 

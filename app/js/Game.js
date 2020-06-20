@@ -25,6 +25,7 @@ class Game extends Component {
     };
 
     componentDidMount() {
+        this.props.musicOff()
         this.mainInterval=setInterval( () => {
             this.showBandit();
             const creakWindow = new Audio('../../assets/sounds/bandit.shot/reload.mp3');
