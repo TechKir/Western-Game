@@ -2,31 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url(../../assets/img/cursors/revolver.png),auto;
     overflow: hidden;
     max-height: 100vh;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    background-size: cover;
+    cursor: url(../../assets/img/cursors/revolver.png),auto;
 }
 
 .attribution-block{
     z-index: 3;
     position: relative;
-    top:-20px;
+    top:-20px; 
     display: block;
-    font-family: 'Tenali Ramakrishna', sans-serif;
-    font-size: 1.1vh;
+    font-size: 1vh;
     padding: 0px 6px;
     a{
         text-decoration: none;
-        color:brown;
+        color:  rgba(148, 30, 30, 0.9);
+        font-weight: bold;
     }
 }
 
 .enterScreen{
     display: flex;
-    font-family: 'Tenali Ramakrishna', sans-serif;
     font-size: 5vh;
     background-image: url(../../assets/img/enterScreen/enterScreen.jpg);
-    background-size: cover;
     background-position: center;
     height: 100vh;
     flex-direction: column;
@@ -101,8 +101,8 @@
 }
 
 .audio{
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     position: relative;
     top:4vh
 }
@@ -120,33 +120,32 @@
     height: 9vh;
     padding:3px
 }
+
 .killsBox{
     display: flex;
     align-items: center;
     z-index: 1;
     position: absolute;
     top:10vh;
-    font-family: 'Tenali Ramakrishna', sans-serif;
     font-size: 3.5vw;
     div{
         line-height: 8vh;
         height: 5vh;
     }
 }
+
 .skull{
     width: 5vw;
     height: 9vh;
     padding:3px
 }
 
-.win{
+.gameFinished{
     background-image: url(../../assets/img/win/3.jpg);
-    background-size: cover;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Tenali Ramakrishna', sans-serif;
     font-weight: bold;
     color: rgb(247, 9, 9);
     align-items: center;
@@ -164,25 +163,22 @@
 }
 
 .gameover{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
     background-image: url('../../assets/img/gameover/gameover0.jpg');
-    background-size: cover;;
-    font-family: 'Tenali Ramakrishna', sans-serif;
-    font-weight: bold;
     color: rgba(148, 30, 30, 0.9);
-    align-items: center;
-    justify-content: center;
-    h1{
-        font-size: 12vh;
-    }
     p{
-        font-size: 8vh;
         span{
             cursor: url(../../assets/img/cursors/aim.red.png),auto;
-            color: rgb(238, 11, 11);
+            color: rgba(201, 0, 0, 0.9);
         }
+    }
+}
+
+.blink_me {
+    animation: blinker 2s linear infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 20%;
     }
 }
