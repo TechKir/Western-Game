@@ -1,5 +1,5 @@
 # Western-Game
-
+![Gamescreen](game.screen.png)
 <h2>Motivation:</h2> 
 Western Game is my first original project to get graduaded programming bootcamp 'CodersLab'. It is a browser game. Technologies what i used is: HTML5, CSS, SASS, JAVASCRIPT, ES6, REACT, WEBPACK. Game was prepared as a desktop version. In the future i plan to expand this basic version for RWD and add three or four more levels with different difficulties. Afterwards i want make posibility to choose two options to play. One is standard game with three or four levels and second ranking game where players can rivalise each other to make more points. Create this game gave me a lot of problems to solve but also huge fun!
 
@@ -10,4 +10,4 @@ Western Game is my first original project to get graduaded programming bootcamp 
 Game made by: TechKir, Music: Tracing My Steps by Aussens@iter, Sounds: Orchestral Victory Fanfare by Sheyvan, Winchester 1873 Single Shots recorded by Grant Evans, Ilustrations: Freepik, Flavicon, Freepik, upklyak, dgim-studio.
 
 <h2>Setup:</h2>
-Click this link to run the game: ...
+Click this link to run the game:
