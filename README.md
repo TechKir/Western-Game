@@ -10,4 +10,4 @@ Western Game is my first original project to get graduaded programming bootcamp 
 Game made by: TechKir, Music: Tracing My Steps by Aussens@iter, Sounds: Orchestral Victory Fanfare by Sheyvan, Winchester 1873 Single Shots recorded by Grant Evans, Ilustrations: Freepik, Flavicon, Freepik, upklyak, dgim-studio.
 
 <h2>Setup:</h2>
-Click this link to run the game: https://techkir.github.io/Western-Shot-Play/
+Click this link to run the game: https://techkir.github.io/Western-Game-Play/
