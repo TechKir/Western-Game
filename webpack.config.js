@@ -23,10 +23,17 @@ module.exports = {
         loader: "file-loader",
       },
       {
-        test: /\.(png|jpg|ico|gif|mp4)$/,
+        test: /\.(png|jpg|ico|gif)$/,
         loader: "file-loader",
         query: {
           name: "assets/img/[name].[ext]",
+        },
+      },
+      {
+        test: /\.(mp4|mp3|wav)$/,
+        loader: "file-loader",
+        query: {
+          name: "assets/media/[name].[ext]",
         },
       },
       {
