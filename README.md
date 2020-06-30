@@ -11,4 +11,3 @@ Game made by: TechKir, Music: Tracing My Steps by Aussens@iter, Sounds: Orchestr
 
 <h2>Setup:</h2>
 Click this link to run the game: https://techkir.github.io/Western-Game-Play/
-![Go](https://techkir.github.io/Western-Game-Play/){:target="_blank"}
