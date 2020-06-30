@@ -1,1 +1,20 @@
-export default ['../../assets/sounds/winchester/winchester1.mp3','../../assets/sounds/winchester/winchester2.mp3','../../assets/sounds/winchester/winchester3.mp3','../../assets/sounds/winchester/winchester4.mp3','../../assets/sounds/winchester/winchester5.mp3','../../assets/sounds/winchester/winchester6.mp3','../../assets/sounds/winchester/winchester7.mp3','../../assets/sounds/winchester/winchester8.mp3','../../assets/sounds/winchester/winchester9.mp3','../../assets/sounds/winchester/winchester10.mp3','../../assets/sounds/winchester/winchester11.mp3','../../assets/sounds/winchester/winchester12.mp3','../../assets/sounds/winchester/winchester13.mp3','../../assets/sounds/winchester/winchester14.mp3','../../assets/sounds/winchester/winchester15.mp3','../../assets/sounds/winchester/winchester16.mp3','../../assets/sounds/winchester/winchester17.mp3','../../assets/sounds/winchester/winchester18.mp3'];
+import winchester1 from '../../../assets/sounds/winchester/winchester1.mp3';
+import winchester2 from '../../../assets/sounds/winchester/winchester2.mp3';
+import winchester3 from '../../../assets/sounds/winchester/winchester3.mp3';
+import winchester4 from '../../../assets/sounds/winchester/winchester4.mp3';
+import winchester5 from '../../../assets/sounds/winchester/winchester5.mp3';
+import winchester6 from '../../../assets/sounds/winchester/winchester6.mp3';
+import winchester7 from '../../../assets/sounds/winchester/winchester7.mp3';
+import winchester8 from '../../../assets/sounds/winchester/winchester8.mp3';
+import winchester9 from '../../../assets/sounds/winchester/winchester9.mp3';
+import winchester10 from '../../../assets/sounds/winchester/winchester10.mp3';
+import winchester11 from '../../../assets/sounds/winchester/winchester11.mp3';
+import winchester12 from '../../../assets/sounds/winchester/winchester12.mp3';
+import winchester13 from '../../../assets/sounds/winchester/winchester13.mp3';
+import winchester14 from '../../../assets/sounds/winchester/winchester14.mp3';
+import winchester15 from '../../../assets/sounds/winchester/winchester15.mp3';
+import winchester16 from '../../../assets/sounds/winchester/winchester16.mp3';
+import winchester17 from '../../../assets/sounds/winchester/winchester17.mp3';
+import winchester18 from '../../../assets/sounds/winchester/winchester18.mp3';
+
+export default [winchester1, winchester2, winchester3, winchester4, winchester5, winchester6, winchester7, winchester8, winchester9, winchester10, winchester11, winchester12, winchester13, winchester14, winchester15, winchester16, winchester17, winchester18];

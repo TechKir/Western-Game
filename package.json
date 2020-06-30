@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "author": "Wojciech Kiryk",
+  "homepage": "https://techkir.github.io",
   "dependencies": {
     "jquery": "^3.5.1",
     "react-native": "^0.62.2",
@@ -11,7 +12,9 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

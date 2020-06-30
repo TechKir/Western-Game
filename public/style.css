@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-height: 100vh;
+  font-family: 'Tenali Ramakrishna', sans-serif;
+  background-size: cover;
+  cursor: url(assets/img/revolver.png), auto; }
+
+.attribution-block {
+  z-index: 3;
+  position: relative;
+  top: -20px;
+  display: block;
+  font-size: 1vh;
+  padding: 0px 6px; }
+  .attribution-block a {
+    text-decoration: none;
+    color: rgba(148, 30, 30, 0.9);
+    font-weight: bold; }
+
+.enterScreen {
+  display: flex;
+  font-size: 5vh;
+  background-image: url(assets/img/enterScreen.jpg);
+  background-position: center;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .enterScreen h1 {
+    font-size: 12vh;
+    justify-content: center; }
+  .enterScreen p {
+    text-align: center;
+    line-height: 6vh;
+    padding: 0 10vw; }
+  .enterScreen h2 {
+    cursor: url(assets/img/aim.red.png), auto;
+    font-size: 7vh; }
+
+.gameContainer {
+  position: relative;
+  height: 100vh;
+  width: 100vw; }
+
+.gameImg {
+  position: relative;
+  height: 100vh;
+  width: 300vw;
+  cursor: url(assets/img/target.png), auto; }
+
+.bandit {
+  width: auto;
+  height: 11.7vh;
+  position: absolute;
+  z-index: 1;
+  cursor: url(assets/img/aim.red.png), auto; }
+
+.intervalDiv {
+  width: 10vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  cursor: url(assets/img/target.png), auto; }
+  .intervalDiv:hover {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1); }
+  .intervalDiv:nth-of-type(1) {
+    right: 0; }
+  .intervalDiv:nth-of-type(2) {
+    right: 10vw; }
+  .intervalDiv:nth-of-type(3) {
+    right: calc(2 * 10vw); }
+  .intervalDiv:nth-of-type(4) {
+    left: 0; }
+  .intervalDiv:nth-of-type(5) {
+    left: 10vw; }
+  .intervalDiv:nth-of-type(6) {
+    left: calc(2 * 10vw); }
+
+.audio {
+  width: 0;
+  height: 0;
+  position: relative;
+  top: 4vh; }
+
+.heartBox {
+  z-index: 1;
+  position: absolute;
+  width: 20vw;
+  height: 9vh; }
+
+.heart {
+  width: 5vw;
+  height: 9vh;
+  padding: 3px; }
+
+.killsBox {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  top: 10vh;
+  font-size: 3.5vw; }
+  .killsBox div {
+    line-height: 8vh;
+    height: 5vh; }
+
+.skull {
+  width: 5vw;
+  height: 9vh;
+  padding: 3px; }
+
+.gameFinished {
+  background-image: url(assets/img/3.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #f70909;
+  align-items: center;
+  justify-content: center; }
+  .gameFinished h1 {
+    font-size: 12vh; }
+  .gameFinished p {
+    font-size: 8vh; }
+    .gameFinished p span {
+      cursor: url(assets/img/aim.red.png), auto;
+      color: red; }
+
+.gameover {
+  background-image: url(assets/img/gameover0.jpg);
+  color: rgba(148, 30, 30, 0.9); }
+  .gameover p span {
+    cursor: url(assets/img/aim.red.png), auto;
+    color: rgba(201, 0, 0, 0.9); }
+
+.blink_me {
+  animation: blinker 2s linear infinite; }
+
+@keyframes blinker {
+  50% {
+    opacity: 20%; } }

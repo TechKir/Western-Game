@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import Bandit from './Bandit';
-import image from '../../assets/img/town/town.jpg';
+import townImage from '../../assets/img/town/town.jpg';
+import skullImage from '../../assets/img/icons/skull.png';
+import heartImage from '../../assets/img/icons/heart.png';
 import Shots from './data/shots';
 
 class GameScreen extends Component {
@@ -100,20 +102,20 @@ class GameScreen extends Component {
             if (life===3){
                 return (
                     <React.Fragment>
-                        <img className='heart' src='../../assets/img/icons/heart.png'/>
-                        <img className='heart' src='../../assets/img/icons/heart.png'/>
-                        <img className='heart' src='../../assets/img/icons/heart.png'/>
+                        <img className='heart' src={heartImage}/>
+                        <img className='heart' src={heartImage}/>
+                        <img className='heart' src={heartImage}/>
                     </React.Fragment>
                 )
             } else if (life===2){
                 return (
                     <React.Fragment>
-                        <img className='heart' src='../../assets/img/icons/heart.png'/>
-                        <img className='heart' src='../../assets/img/icons/heart.png'/>
+                        <img className='heart' src={heartImage}/>
+                        <img className='heart' src={heartImage}/>
                     </React.Fragment>
                 )
             } else if (life===1){
-                return <img className='heart' src='../../assets/img/icons/heart.png'/>
+                return <img className='heart' src={heartImage}/>
             }
         };
 
@@ -126,9 +128,9 @@ class GameScreen extends Component {
                 <div className='intervalDiv' onMouseEnter={this.onEnterL2} onMouseLeave={this.onLeave}></div>
                 <div className='intervalDiv' onMouseEnter={this.onEnterL1} onMouseLeave={this.onLeave}></div>
                 <div className='heartBox'>{actualLife()}</div>
-                <div className='killsBox'><img className='skull' src='../../assets/img/icons/skull.png'/><div>= {kills}</div></div>
+                <div className='killsBox'><img className='skull' src={skullImage}/><div>= {kills}</div></div>
                 <div className='gameImg' style={{right:move+'px'}}>
-                    <img className='gameImg' onLoad={this.onImgLoad} src={image} scrolling='no'/>
+                    <img className='gameImg' onLoad={this.onImgLoad} src={townImage} scrolling='no'/>
                     {bandits.map( (element,index) => {  
                         if(element.visible=='true'){
                             return <Bandit handleClick={() => handleClick(index)} key={index} left={element.left} top={element.top} visible={element.visible}/>

@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import GameScreen from './GameScreen';
 //import Bandits from './data/bandits'; // imported Bandits doesn't reset state 'visible' on start again. 
 import GameStatus from './constants/GameStatus';
+//Sounds:
+import banditShot from '../../assets/sounds/bandit.shot/shot1.mp3';
+import banditReload from '../../assets/sounds/bandit.shot/reload.mp3';
 
 class Game extends Component {
     state= {
@@ -27,11 +30,11 @@ class Game extends Component {
     componentDidMount() {
         this.mainInterval=setInterval( () => {
             this.showBandit();
-            const gunReload = new Audio('../../assets/sounds/bandit.shot/reload.mp3');
+            const gunReload = new Audio(banditReload);
             gunReload.play();
 
             this.deathInterval= setTimeout( () => {
-                const shot = new Audio('../../assets/sounds/bandit.shot/shot1.mp3');
+                const shot = new Audio(banditShot);
                 shot.play();
                 this.setState(prevState => {
                     return {

@@ -1,10 +1,11 @@
 import React,{useEffect} from 'react';
 import GameStatus from './constants/GameStatus';
+import victoryMP3 from '../../assets/sounds/victory.wav';
 
 const Win = props => {
 
     useEffect(() => {
-      const victorySound=new Audio('../../assets/sounds/victory.wav')
+      const victorySound=new Audio(victoryMP3)
       victorySound.play();
     }, []);
 
